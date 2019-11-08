@@ -17,16 +17,14 @@ int main(int argc, const char * argv[]) {
     
 
     char *file = "/Users/kongxiangshu/Desktop/1111.mp4";
-    char *outfile = "/Users/kongxiangshu/Desktop/1111_out.mp4";
+    char *outfile = "/Users/kongxiangshu/Desktop/1111_out.yuv";
     
     AVFormatContext *inputContext;
     
     if (avformat_open_input(&inputContext, file, NULL, NULL) < 0) {
         LOGE("scan not open file %s ", file);
     }
-    
     //解封装，找到视频和音频流信息
-    
     if(avformat_find_stream_info(inputContext, NULL) < 0) {
         LOGE("没找到音视频信息");
     }

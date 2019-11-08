@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
     
     
     char *file  = "/Users/kongxiangshu/Desktop/1111.mp4";
-    char *outfile  = "/Users/kongxiangshu/Desktop/1111_out.avi";
+    char *outfile  = "/Users/kongxiangshu/Desktop/1111_out.yuv";
     
     
 //    ffmpegInit();
@@ -127,6 +127,7 @@ int main(int argc, const char * argv[]) {
             LOGE("copy param from context failed");
             exit(0);
         }
+        
         
         outstream->codecpar->codec_tag = 0;
     }

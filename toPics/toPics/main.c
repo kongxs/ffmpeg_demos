@@ -25,8 +25,8 @@ void savePics(AVFrame *frame,char *path) ;
 /**
  * 从视频中抽取图片
  
-    准备工作：  1. 打开视频文件，并获取到视频流信息 ， 将视频流解码
-              2. 解码后的frame 进行编码成图片格式
+ 准备工作：  1. 打开视频文件，并获取到视频流信息 ， 将视频流解码
+ 2. 解码后的frame 进行编码成图片格式
  */
 int main(int argc, const char * argv[]) {
     
@@ -48,7 +48,7 @@ int main(int argc, const char * argv[]) {
         exit(1);
     }
     
-//    av_dump_format(in_context, -1, file, 0);
+    //    av_dump_format(in_context, -1, file, 0);
     
     int best_stream_index = -1;
     
@@ -114,10 +114,10 @@ int main(int argc, const char * argv[]) {
     pkt.size = 0;
     pkt.data = NULL;
     
-//    pkt = *av_packet_alloc();
-//
-//    pkt.data = NULL;
-//    pkt.size = 0;
+    //    pkt = *av_packet_alloc();
+    //
+    //    pkt.data = NULL;
+    //    pkt.size = 0;
     
     
     AVFrame *frame = av_frame_alloc();
@@ -143,16 +143,16 @@ int main(int argc, const char * argv[]) {
                 exit(1);
             }
             
-            while(avcodec_receive_frame(codec_context, frame) ==0) {
-                
-                // ready to save pics
-                snprintf(buf, sizeof(buf), "%s/Demo-%d.jpg", outDir, frame_count);
-                
-//                sprintf(name,"asdffasd");
-                if (frame_count % 25 == 0) {
-                    savePics(frame,buf);
-                }
+            avcodec_receive_frame(codec_context, frame);
+            
+            // ready to save pics
+            snprintf(buf, sizeof(buf), "%s/Demo-%d.jpg", outDir, frame_count);
+            
+            //                sprintf(name,"asdffasd");
+            if (frame_count % 25 == 0) {
+                savePics(frame,buf);
             }
+            
             
             frame_count ++ ;
             

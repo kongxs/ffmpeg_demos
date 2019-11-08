@@ -17,6 +17,9 @@
 		A710C4FE2373C07200CF8F84 /* libavresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A710C4F52373C07200CF8F84 /* libavresample.a */; };
 		A710C4FF2373C07200CF8F84 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A710C4F62373C07200CF8F84 /* libswresample.a */; };
 		A710C5002373C07200CF8F84 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A710C4F72373C07200CF8F84 /* libavutil.a */; };
+		A7B7A84D23751271000507D2 /* libSDL2main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B7A84A23751271000507D2 /* libSDL2main.a */; };
+		A7B7A84E23751271000507D2 /* libSDL2_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B7A84B23751271000507D2 /* libSDL2_test.a */; };
+		A7B7A84F23751271000507D2 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B7A84C23751271000507D2 /* libSDL2.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +46,9 @@
 		A710C4F52373C07200CF8F84 /* libavresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavresample.a; path = ../../../../../usr/local/Cellar/ffmpeg/4.2.1_2/lib/libavresample.a; sourceTree = "<group>"; };
 		A710C4F62373C07200CF8F84 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = ../../../../../usr/local/Cellar/ffmpeg/4.2.1_2/lib/libswresample.a; sourceTree = "<group>"; };
 		A710C4F72373C07200CF8F84 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../../../usr/local/Cellar/ffmpeg/4.2.1_2/lib/libavutil.a; sourceTree = "<group>"; };
+		A7B7A84A23751271000507D2 /* libSDL2main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2main.a; path = ../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2main.a; sourceTree = "<group>"; };
+		A7B7A84B23751271000507D2 /* libSDL2_test.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2_test.a; path = ../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2_test.a; sourceTree = "<group>"; };
+		A7B7A84C23751271000507D2 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B7A84D23751271000507D2 /* libSDL2main.a in Frameworks */,
+				A7B7A84E23751271000507D2 /* libSDL2_test.a in Frameworks */,
+				A7B7A84F23751271000507D2 /* libSDL2.a in Frameworks */,
 				A710C4F82373C07200CF8F84 /* libavfilter.a in Frameworks */,
 				A710C4F92373C07200CF8F84 /* libswscale.a in Frameworks */,
 				A710C4FA2373C07200CF8F84 /* libpostproc.a in Frameworks */,
@@ -93,6 +102,9 @@
 		A710C4EE2373C07100CF8F84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7B7A84B23751271000507D2 /* libSDL2_test.a */,
+				A7B7A84C23751271000507D2 /* libSDL2.a */,
+				A7B7A84A23751271000507D2 /* libSDL2main.a */,
 				A710C4F32373C07200CF8F84 /* libavcodec.a */,
 				A710C4F42373C07200CF8F84 /* libavdevice.a */,
 				A710C4EF2373C07200CF8F84 /* libavfilter.a */,
@@ -284,10 +296,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/Cellar/ffmpeg/4.2.1_2/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/ffmpeg/4.2.1_2/include,
+					/usr/local/Cellar/sdl2/2.0.10/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/ffmpeg/4.2.1_2/lib,
+					/usr/local/Cellar/sdl2/2.0.10/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -297,10 +313,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/Cellar/ffmpeg/4.2.1_2/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/ffmpeg/4.2.1_2/include,
+					/usr/local/Cellar/sdl2/2.0.10/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/ffmpeg/4.2.1_2/lib,
+					/usr/local/Cellar/sdl2/2.0.10/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
